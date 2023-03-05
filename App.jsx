@@ -38,12 +38,42 @@ const columns = [
     minWidth: 150,
   },
 ];
+
+// ...
 const TopMenu = (props) => {
-  // ...
+  return (
+    <Box sx={{ flexGrow: 1, mb: 1 }}>
+      <AppBar position="static">
+        <Toolbar />
+      </AppBar>
+    </Box>
+  );
 };
 const EditMenu = (props) => {
-  // ...
+  return (
+    <div>
+      <Button
+        startIcon={<Add />}
+        variant="contained"
+        sx={{ my: 1, mr: 1 }}
+        onClick={props.addPost}
+      >
+        Add
+      </Button>
+      <Button
+        startIcon={<Delete />}
+        variant="contained"
+        disabled={!props.selection.length}
+        sx={{ my: 1, mr: 1 }}
+        onClick={() => props.removePosts(props.selection)}
+      >
+        Remove
+      </Button>
+    </div>
+  );
 };
+// ...
+
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [selection, setSelection] = useState([]);
