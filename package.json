@@ -1,0 +1,8 @@
+npm init -y
+npm install express body-parser express-async-errors express-openid-connect dotenv @elastic/elasticsearch
+
+npm create vite frontend -- --template react
+cd frontend
+npm install
+npm install @mui/material @emotion/react @emotion/styled @faker-js/faker @mui/icons-material @mui/x-data-grid axios
+npm run dev
